@@ -4,7 +4,7 @@ function consultarAPI(){
     fetch(url)
         .then(resultado => resultado.json())
         .then(resultadoJson => {
-            precioCompra=(resultadoJson.RAW.USDT.ARS.PRICE)-(resultadoJson.RAW.USDT.ARS.PRICE*1/100);
+            setInterval(precioCompra=(resultadoJson.RAW.USDT.ARS.PRICE)-(resultadoJson.RAW.USDT.ARS.PRICE*1/100),1000);
         })
         .catch(error => console.log(error));
 }
