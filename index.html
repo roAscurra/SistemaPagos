@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pagos</title>
 </head>
 <body>
-    
+    <form id="formulario">
+        <p>
+            <label for="nombreapellido">Nombre y Apellido (como figura en DNI)
+                <span>*</span>
+            </label>
+        </p>
+        <input type="text" id="nombre">
+        <p>
+            <label for="ntransaccion">
+                Número de transacción (opcional)
+            </label>
+        </p>
+        <input type="number" id="n_transaccion">
+        <p>
+            <label for="cantidadDeposito">
+                Cantidad a depositar
+                <span>*</span>
+            </label>
+        </p>
+        <input type="number" id="cantidad">
+        <p>
+            <label for="usdt">
+                Equivale a:
+            </label>
+        </p>
+        <input type="text" id="resultado" value="0,000 USDT">
+        <p>
+            <label for="caja">
+                Tipo de caja
+                <span>*</span>
+            </label>
+        </p>
+        <select  id="caja" name="tipoCaja">
+            <option value="Caja Empresa">CAJA EMPRESAS</option>
+            <option value="Caja Inmueble">CAJA INMUEBLE</option>
+            <option value="Caja País">CAJA PAIS</option>
+        </select>
+        <p>
+            <button type="submit" id="boton">Enviar</button>
+        </p>
+    </form>
 </body>
 </html>
