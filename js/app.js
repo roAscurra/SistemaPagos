@@ -1,10 +1,14 @@
 let precioCompra=0;
+function valorCompra(valor){
+    let compra= valor-(valor*1/100);
+    return compra;
+}
 function consultarAPI(){
     const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=USDT&tsyms=ARS`;
     fetch(url)
         .then(resultado => resultado.json())
         .then(resultadoJson => {
-            setInterval(precioCompra=(resultadoJson.RAW.USDT.ARS.PRICE)-(resultadoJson.RAW.USDT.ARS.PRICE*1/100),1000);
+            precioCompra=valorCompra(resultadoJson.RAW.USDT.ARS.PRICE)
         })
         .catch(error => console.log(error));
 }
