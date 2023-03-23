@@ -8,4 +8,8 @@ function consultarAPI(){
         })
         .catch(error => console.log(error));
 }
+function mostrar(valor){
+    let equivalente=valor/precioCompra;
+    document.getElementById("resultado").value=`${equivalente.toFixed(3)} USDT`;
+}
 consultarAPI()
