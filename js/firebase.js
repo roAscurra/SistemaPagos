@@ -1,6 +1,6 @@
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-    //import { collection, getFirestore, addDoc, getDocs, onSnapshot, orderBy } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"
+    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
   
@@ -15,3 +15,21 @@
     };
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+
+    export const InsertData = (nombre, transaccion,caja,cantidad,usd) => {
+        push(ref(db,"Pagos/"),{
+          Nombre: nombre,
+          transaccion: transaccion,
+          Caja: caja,
+          Monto: cantidad,
+          USDT: usd,
+        })
+        .then(()=> {
+          console.log("Datos guardados")
+        })
+        .catch((error)=>{
+          console.log(error)
+        });
+      }
+      
