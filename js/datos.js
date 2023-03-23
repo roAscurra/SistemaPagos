@@ -10,4 +10,5 @@ datos.addEventListener('submit',(e)=>{
     const cantidad = datos['cantidad'];
     const usd = datos['resultado'];
     InsertData(nombre.value,transaccion.value,tipoCaja.value,cantidad.value,resultado.value,usd.value);
+    datos.reset();
 })
