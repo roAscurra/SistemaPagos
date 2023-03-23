@@ -1,4 +1,11 @@
 let precioCompra=0;
+let mostrarmodal= document.getElementById('boton');
+let modal = document.getElementById('modal');
+
+mostrarmodal.addEventListener("click",()=>{
+    modal.showModal();
+})
+
 function valorCompra(valor){
     let compra= valor-(valor*1/100);
     return compra;
