@@ -15,6 +15,7 @@
     };
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
+    
     const db = getDatabase();
 
     export const InsertData = (nombre, transaccion,caja,cantidad,usd) => {
