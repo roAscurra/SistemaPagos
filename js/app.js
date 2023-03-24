@@ -1,9 +1,9 @@
 let precioCompra=0;
-let mostrarmodal= document.getElementById('boton');
+let botonEnviar = document.getElementById('boton');
 let modal = document.getElementById('modal');
 let cerrarmodal = document.getElementById('btn-cerrar-modal');
 
-mostrarmodal.addEventListener("click",()=>{
+botonEnviar.addEventListener("click",()=>{
     modal.showModal();
 })
 cerrarmodal.addEventListener("click",()=>{
@@ -26,4 +26,5 @@ function mostrar(valor){
     let equivalente=valor/precioCompra;
     document.getElementById("resultado").value=`${equivalente.toFixed(3)} USDT`;
 }
+consultarAPI();
 setInterval('consultarAPI()',1000);
