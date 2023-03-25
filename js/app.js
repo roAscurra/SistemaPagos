@@ -28,3 +28,29 @@ function mostrar(valor){
 }
 consultarAPI();
 setInterval('consultarAPI()',1000);
+botonEnviar.disabled=true;
+function habilitar(){
+    let nombre = document.getElementById('nombre').value;
+    let caja = document.getElementById('caja').value;
+    let cantidad = document.getElementById('cantidad').value;
+
+    let des=0;
+    if(nombre==''){
+        des++;
+    }
+    if(caja=='0'){
+        des++;
+    }
+    if(cantidad==''){
+        des++;
+    }
+    if(des===0){
+        botonEnviar.disabled=false;
+    }else{
+        botonEnviar.disabled=true;
+
+    }
+    
+}
+document.getElementById('caja').addEventListener('change',habilitar)
+document.getElementById('formulario').addEventListener('keyup',habilitar);
