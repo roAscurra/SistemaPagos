@@ -4,54 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <title>Pagos</title>
 </head>
-<body>
+<body style="background-color: #f2f2f2;">
     <form id="formulario">
-        <p>
-            <label for="nombreapellido">Nombre y Apellido (como figura en DNI)
+        <p id="title">DATOS REQUERIDOS:</p>
+        <label for="nombreapellido">Nombre y Apellido (como figura en DNI)
                 <span>*</span>
-            </label>
-        </p>
+        </label>
         <input type="text" id="nombre">
-        <p>
-            <label for="ntransaccion">
+    
+        <label for="ntransaccion">
                 Número de transacción (opcional)
-            </label>
-        </p>
+        </label>
+        
         <input type="number" id="n_transaccion">
-        <p>
-            <label for="cantidadDeposito">
+        
+        <label for="cantidadDeposito">
                 Cantidad a depositar
                 <span>*</span>
-            </label>
-        </p>
+        </label>
         <input type="number" id="cantidad" onkeyup="mostrar(this.value)" >
-        <p>
-            <label for="usdt">
+        
+        <label for="usdt">
                 Equivale a:
-            </label>
-        </p>
-        <input type="text" id="resultado" value="0,000 USDT">
-        <p>
-            <label for="caja">
+        </label>
+        
+        <input type="text" id="resultado" disabled value="$ 0.00 USDT">
+        <label for="caja">
                 Tipo de caja
                 <span>*</span>
-            </label>
-        </p>
+        </label>
         <select  id="caja" name="tipoCaja">
-            <option value="0">Seleccione tipo de caja...</option>
+            <option value="0">Seleccion tipo de caja...</option>
             <option value="Caja Empresa">CAJA EMPRESAS</option>
             <option value="Caja Inmueble">CAJA INMUEBLE</option>
             <option value="Caja País">CAJA PAIS</option>
         </select>
         <p>
-            <button type="submit" id="boton">Enviar</button>
+            <button type="submit" class="btn" id="boton">INVERTIR</button>
         </p>
     </form>
-    <dialog open id="modal">
+    <dialog id="modal">
         <p>¡Tu solicitud ha sido enviada con éxito!</p>
         <p>Tén en cuenta que la acreditación en tu cuenta puede demorar 48hrs hábiles. Muchas gracias.</p>
         <img src="./img/sleep.png" id="pig">
