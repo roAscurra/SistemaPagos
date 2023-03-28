@@ -8,6 +8,7 @@ botonEnviar.addEventListener("click",()=>{
 })
 cerrarmodal.addEventListener("click",()=>{
     modal.close();
+    botonEnviar.disabled=true;
 })
 function valorCompra(valor){
     let compra= valor-(valor*1/100);
