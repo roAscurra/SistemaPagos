@@ -17,7 +17,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     
-    const db = getDatabase();
+    const db = getDatabase(app);
 
     export const InsertData = (nombre, transaccion,caja,cantidad,usd) => {
         push(ref(db,"Pagos/"),{
